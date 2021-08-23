@@ -1,4 +1,54 @@
-body {background-color:tan;}
-h1{color:green;}
+body {
+    background-color:white;
+    font-family: sans-serif;
+}
+h1 {
+    color:gray;
+    text-align: center;
+}
 
+.main {
+    /* border: 1px solid red; */
+    width: 30%;
+    position: fixed;
+    left: 35%;
+}
 
+.topBoxes {
+    /* border: 3px solid black; */
+    width: 100%;
+    display: flex;
+}
+
+.label-container {
+    /* border: 1px solid blue; */
+    height: 16vh;
+    width: 16vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container {
+    /* border: 1px solid red; */
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    margin-bottom: 10px;
+}
+
+.lower-text {
+    /* border: 1px solid blue; */
+    width: 100%;
+}
+
+.result-message {
+    /* border: 1px solid orange; */
+    display: flex;
+}
+
+.shift-item-right {
+    margin-left: 5vw;
+}

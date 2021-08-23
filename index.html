@@ -4,13 +4,46 @@
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
+
         <h1>Simple Interest Calculator</h1>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+        <div class="main">
 
-        <button onclick="compute()">Compute</button>
+            <div class="topBoxes">
+
+                <div class="label-container">
+                    <label class="input shift-item-right" >Amount</label>
+                    <label class="input shift-item-right" >Interest Rate</label>
+                    <label class="input shift-item-right" >No. of Years</label>
+                    <button class="shift-item-right" onclick="compute()">Compute Interest</button>
+                </div>
+
+                <div class="input-container">
+                    <input class="input" type="number"  id="principal">
+                    <div>
+                        <input input type="range" min="1" max="100" value="50" class="input" type="number"  id="rate" min="0" value="0" max="100">
+                        <span class="range-slider-value">3.5%</span>
+                    </div>
+                    <br>
+                    <select class="input" type="number"  id="years" placeholder="1"></select>
+                </div>
+
+            </div>
+
+            <div class="lower-text">
+                <p class="result-message shift-item-right">
+                    If you deposit 1000000<br>
+                    at an interest rate of 3.5% <br>
+                    You will receive an amount of 175000,<br>
+                    in the year 2025.
+                </p>
+                <p>Ⓒ Everyone Can Get Rich</p>
+            </div>
+
+
+
+        </div>
+
+
     </body>
 </html>

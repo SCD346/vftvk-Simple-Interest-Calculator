@@ -1,6 +1,7 @@
 function compute()
 {
-    p = document.getElementById("principal").value;
-    
+    console.log("click")
+    // p = document.getElementById("principal").value;
+
 }
-        
+
