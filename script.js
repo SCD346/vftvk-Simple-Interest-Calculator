@@ -42,10 +42,12 @@ function compute()
 
 
 //Slider live update
-    //Set sliderRate to input
+    //Set sliderRate to input selected in slider range
 const sliderRate = document.getElementById('rate')
+    //Set event listener, listend for input fron slider, then runs sliderRateChange()
 sliderRate.addEventListener('input', sliderRateChange)
 
+//sliderRateChange fn sets innerText of rateLocation (span located next to the slider range) to display value selected in slider range, rounded down to show only 1 deciman place by using parseFloat and .toFixed method.
 function sliderRateChange() {
     const rateLocation = document.querySelector('.range-slider-value')
     rateLocation.innerText = parseFloat(this.value).toFixed(1) + '%'
