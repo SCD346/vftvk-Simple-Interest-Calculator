@@ -47,15 +47,16 @@ label {
 }
 
 #selectElementId {
-    width: 2vw;
+    width: 2.3vw;
     height: 1.2vw;
     margin-top: -8px;
     font-size: 1vw;
 }
 
-.result-message {
+#result-message {
     /* border: 1px solid orange; */
     margin-left: 3vw;
+    width: 20.5vw;
 }
 
 .name-text {
@@ -70,8 +71,9 @@ label {
     white-space: nowrap;
 }
 
-#slider-container {
-    /* border: 1px solid red; */
+#highlighter {
+    background-color: yellow; /*Highlight Color*/
+
 }
 
 .slider {

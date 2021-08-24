@@ -20,8 +20,8 @@
                 <div class="input-container">
                     <input class="input" type="number"  id="principal">
                     <div id="slider-container">
-                        <input type="range" min="1" max="100" value="50" class="input slider" type="number"  id="rate" min="0" value="0" max="100">
-                        <span class="range-slider-value input">3.5%</span>
+                        <input type="range" min="1" max="100" value="50" class="input slider" type="number"  id="rate" min="0.00" value="0.00" max="50.00" step=".01">
+                        <span class="range-slider-value input"></span>
                     </div>
                     <br>
                     <select class="input" type="number" name="numOfYears" id="selectElementId"></select>
@@ -30,12 +30,7 @@
             </div>
 
             <div class="lower-text">
-                <p class="result-message shift-item-right">
-                    If you deposit 1000000<br>
-                    at an interest rate of 3.5% <br>
-                    You will receive an amount of 175000,<br>
-                    in the year 2025.
-                </p>
+                <p class="shift-item-right" id="result-message"></p>
                 <p>Ⓒ Everyone Can Get Rich</p>
             </div>
 
