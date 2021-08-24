@@ -1,54 +1,84 @@
 body {
     background-color:white;
-    font-family: sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1vw;
 }
 h1 {
+    font-size: 2.4vw;
+    margin-top: 5vh;
     color:gray;
     text-align: center;
 }
 
 .main {
-    /* border: 1px solid red; */
-    width: 30%;
+    /* border: 1px solid green; */
+    width: 40vw;
     position: fixed;
-    left: 35%;
+    left: 35.5vw;
 }
 
 .topBoxes {
-    /* border: 3px solid black; */
     width: 100%;
     display: flex;
 }
 
 .label-container {
     /* border: 1px solid blue; */
-    height: 16vh;
-    width: 16vw;
+    width: 12vw;
     display: flex;
     flex-direction: column;
 }
 
 .input-container {
     /* border: 1px solid red; */
-    width: 45%;
+    width: 70%;
     display: flex;
     flex-direction: column;
 }
 
-.input {
-    margin-bottom: 10px;
+label {
+    margin-bottom: 15px;
 }
 
-.lower-text {
-    /* border: 1px solid blue; */
-    width: 100%;
+#principal {
+    width: 12vw;
+    height: 1.2vw;
+    margin-bottom: 14px;
+}
+
+#selectElementId {
+    width: 2vw;
+    height: 1.2vw;
+    margin-top: -8px;
+    font-size: 1vw;
 }
 
 .result-message {
     /* border: 1px solid orange; */
-    display: flex;
+    margin-left: 3vw;
 }
 
-.shift-item-right {
-    margin-left: 5vw;
+.name-text {
+    margin-left: 3vw;
 }
+
+.compute-button {
+    font-size: 1vw;
+    width: 9vw;
+    /* height: 3vh; */
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+#slider-container {
+    /* border: 1px solid red; */
+}
+
+.slider {
+    width: 10.5vw;
+}
+
+/*
+.range-slider-value {
+    border: 1px solid springgreen;
+} */

@@ -1,6 +1,5 @@
 <html>
     <head>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -12,20 +11,20 @@
             <div class="topBoxes">
 
                 <div class="label-container">
-                    <label class="input shift-item-right" >Amount</label>
-                    <label class="input shift-item-right" >Interest Rate</label>
-                    <label class="input shift-item-right" >No. of Years</label>
-                    <button class="shift-item-right" onclick="compute()">Compute Interest</button>
+                    <label class="name-text" >Amount</label>
+                    <label class="name-text" >Interest Rate</label>
+                    <label class="name-text" >No. of Years</label>
+                    <button class="compute-button" onclick="compute()">Compute Interest</button>
                 </div>
 
                 <div class="input-container">
                     <input class="input" type="number"  id="principal">
-                    <div>
-                        <input input type="range" min="1" max="100" value="50" class="input" type="number"  id="rate" min="0" value="0" max="100">
-                        <span class="range-slider-value">3.5%</span>
+                    <div id="slider-container">
+                        <input type="range" min="1" max="100" value="50" class="input slider" type="number"  id="rate" min="0" value="0" max="100">
+                        <span class="range-slider-value input">3.5%</span>
                     </div>
                     <br>
-                    <select class="input" type="number"  id="years" placeholder="1"></select>
+                    <select class="input" type="number" name="numOfYears" id="selectElementId"></select>
                 </div>
 
             </div>
@@ -45,5 +44,6 @@
         </div>
 
 
+        <script src="script.js"></script>
     </body>
 </html>
