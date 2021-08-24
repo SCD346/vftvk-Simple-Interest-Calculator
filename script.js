@@ -53,3 +53,27 @@ function sliderRateChange() {
     rateLocation.innerText = parseFloat(this.value).toFixed(1) + '%'
 }
 
+
+//ALERTS based on input values, to run upon clicking "Compute Interest" button
+const ComputeInterestButton = document.querySelector('.compute-button')
+ComputeInterestButton.addEventListener('click', validateForm)
+    //Check if blank
+    function validateForm() {
+        var x = document.getElementById('principal').value;
+        if (x == "") {
+          alert("Please enter a positive number.");
+          return false;
+        }
+
+            if (Math.sign(x) == "-1") {
+                alert("Please enter a positive number.")
+                setTimeout(function(){document.getElementById('principal').focus();}, 1);
+                return false;
+            }
+
+
+            if (x == "0") {
+                alert("Please enter a positive number.")
+            }
+
+      }
