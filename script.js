@@ -83,6 +83,7 @@ ComputeInterestButton.addEventListener('click', validateForm)
             //Check if a zero was entered
             if (x == "0") {
                 alert("Please enter a positive number.")
+                setTimeout(function(){document.getElementById('principal').focus()}, 1);
                 document.getElementById("result-message").innerHTML = null
                 return false;
             }
