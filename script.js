@@ -19,6 +19,8 @@ function compute()
     const startingYear = new Date().getFullYear()
     //Set amount to value entered in principal input
     const amount = document.getElementById('principal').value
+        //Set amountCommas to display amount with commas using a regular expression
+        const amountCommas = amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     //Set rate to value selected in rate input
     const rate = document.getElementById('rate').value
     //Set rateT takes rate and divides by 100
@@ -26,14 +28,16 @@ function compute()
     //Set years to value selected in No. of Years
     const years = parseInt(document.getElementById('selectElementId').value)
     //Set interestAmount by taking amount * rateT * years
-    const interestAmount = (amount * rateT * years)
+    const interestAmount = parseFloat(amount * rateT * years).toFixed(0)
+        //Set interestAmountCommas to display interestAmount with commas using a regular expression
+        const interestAmountCommas = interestAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
     //CREATE OUTPUT RESPONSE MESSAGE WITH TEMPLATE LITERALS
         //Uses consts above
     const message = `
-        <span>If you deposit <span id="highlighter">${amount}</span>,</span><br>
+        <span>If you deposit <span id="highlighter">${amountCommas}</span>,</span><br>
         <span>at an interest rate of <span id="highlighter">${rate}%</span>.</span><br>
-        <span>You will receive an amount of <span id="highlighter">${parseFloat(interestAmount).toFixed(0)}</span>,</span><br>
+        <span>You will receive an amount of <span id="highlighter">${interestAmountCommas}</span>,</span><br>
         <span>in the year <span id="highlighter">${startingYear + years}</span></span>
         `
         //adds message to innerHTML of span
@@ -44,8 +48,10 @@ function compute()
 //Slider live update
     //Set sliderRate to input selected in slider range
 const sliderRate = document.getElementById('rate')
-    //Set event listener, listend for input fron slider, then runs sliderRateChange()
+//Set event listener, listend for input fron slider, then runs sliderRateChange()
 sliderRate.addEventListener('input', sliderRateChange)
+
+
 
 //sliderRateChange fn sets innerText of rateLocation (span located next to the slider range) to display value selected in slider range, rounded down to show only 1 deciman place by using parseFloat and .toFixed method.
 function sliderRateChange() {
@@ -57,23 +63,25 @@ function sliderRateChange() {
 //ALERTS based on input values, to run upon clicking "Compute Interest" button
 const ComputeInterestButton = document.querySelector('.compute-button')
 ComputeInterestButton.addEventListener('click', validateForm)
-    //Check if blank
+
     function validateForm() {
+        //Get the value entered in the Amount input
         var x = document.getElementById('principal').value;
+        //Check if blank
         if (x == "") {
           alert("Please enter a positive number.");
           return false;
         }
-
+        //Check if a negative value entered
             if (Math.sign(x) == "-1") {
                 alert("Please enter a positive number.")
-                setTimeout(function(){document.getElementById('principal').focus();}, 1);
+                setTimeout(function(){document.getElementById('principal').focus()}, 1);
                 return false;
             }
-
-
+            //Check if a zero was entered
             if (x == "0") {
                 alert("Please enter a positive number.")
+                return false;
             }
-
       }
+
