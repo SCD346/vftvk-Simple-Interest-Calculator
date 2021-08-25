@@ -44,21 +44,17 @@ function compute()
     document.getElementById("result-message").innerHTML = message;
 }
 
-
 //Slider live update
     //Set sliderRate to input selected in slider range
 const sliderRate = document.getElementById('rate')
 //Set event listener, listend for input fron slider, then runs sliderRateChange()
 sliderRate.addEventListener('input', sliderRateChange)
 
-
-
 //sliderRateChange fn sets innerText of rateLocation (span located next to the slider range) to display value selected in slider range, rounded down to show only 1 deciman place by using parseFloat and .toFixed method.
 function sliderRateChange() {
     const rateLocation = document.querySelector('.range-slider-value')
     rateLocation.innerText = parseFloat(this.value).toFixed(1) + '%'
 }
-
 
 //ALERTS based on input values, to run upon clicking "Compute Interest" button
 const ComputeInterestButton = document.querySelector('.compute-button')
@@ -69,19 +65,25 @@ ComputeInterestButton.addEventListener('click', validateForm)
         var x = document.getElementById('principal').value;
         //Check if blank
         if (x == "") {
+            //Triggers alert IF above statement is met.
           alert("Please enter a positive number.");
+            //Set a timer to return focus to input field
+          setTimeout(function(){document.getElementById('principal').focus()}, 1);
+            //Set result message to null
+          document.getElementById("result-message").innerHTML = null
           return false;
         }
         //Check if a negative value entered
             if (Math.sign(x) == "-1") {
                 alert("Please enter a positive number.")
                 setTimeout(function(){document.getElementById('principal').focus()}, 1);
+                document.getElementById("result-message").innerHTML = null
                 return false;
             }
             //Check if a zero was entered
             if (x == "0") {
                 alert("Please enter a positive number.")
+                document.getElementById("result-message").innerHTML = null
                 return false;
             }
       }
-
